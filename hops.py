@@ -1,14 +1,15 @@
 import os
 import pandas as pd
 import subprocess
+import re
+
 
 class Hops:
-    def __init__(self, link):
-        self.link
+    def __init__(self):
+        self.link = "google.com"
 
-
-# os.system('chmod +x parse_traceroute.sh')
-# result = subprocess.run(['./parse_traceroute.sh'], capture_output=True, text=True)
-
-# print(result)
-
+    def hops_revealer(self):
+        
+        result = subprocess.run(['traceroute', self.link], capture_output=True, text=True)
+        for i in result:
+            print(result)
